@@ -7,17 +7,16 @@ a fluid simulator written in c
 ## how to use:
 
 ```console
-cd ./c-fluid
-make run
+$ cd ./c-fluid
+$ make run
 ```
 
 OR
 
 ```console
-cd ./c-fluid
-make run
-gcc -W -o ./bin/fluids ./src/*.c -I"./include" -L"./lib" -lglfw3 -lopengl32 -lgdi32
-./bin/fluids
+$ cd ./c-fluid
+$ gcc -W -o ./bin/fluids ./src/*.c -I"./include" -L"./lib" -lglfw3 -lopengl32 -lgdi32
+$ ./bin/fluids
 ```
 
 ## material
