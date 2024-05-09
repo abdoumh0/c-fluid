@@ -66,37 +66,38 @@ int main()
     fragment_source[fsize] = 0;
 
     // build and compile our shader program
-    const char *vertexShaderSource = "#version 330 core\n"
+    // const char *vertexShaderSource = "#version 330 core\n"
 
-                                     "layout (location = 0) in vec3 aPos;\n"
-                                     "layout (location = 1) in vec2 aTexCoord;\n"
+    //                                  "layout (location = 0) in vec3 aPos;\n"
+    //                                  "layout (location = 1) in vec2 aTexCoord;\n"
 
-                                     "out vec2 TexCoord;\n"
+    //                                  "out vec2 TexCoord;\n"
 
-                                     "void main()\n"
-                                     "{\n"
-                                     "   gl_Position = vec4(aPos, 1.0);\n"
-                                     "   TexCoord = aTexCoord.xy;\n"
-                                     "}\0";
+    //                                  "void main()\n"
+    //                                  "{\n"
+    //                                  "   gl_Position = vec4(aPos, 1.0);\n"
+    //                                  "   TexCoord = aTexCoord.xy;\n"
+    //                                  "}\0";
 
-    const char *fragmentShaderSource = "#version 330 core\n"
+    // const char *fragmentShaderSource = "#version 330 core\n"
 
-                                       "out vec4 FragColor;\n"
-                                       "in vec2 TexCoord;\n"
+    //                                    "out vec4 FragColor;\n"
+    //                                    "in vec2 TexCoord;\n"
 
-                                       "uniform sampler2D texture;\n"
-                                       "uniform vec2 u_resolution;\n"
+    //                                    "uniform sampler2D texture;\n"
+    //                                    "uniform vec2 u_resolution;\n"
 
-                                       "void main()\n"
-                                       "{\n"
-                                       "    vec2 uv = gl_FragCoord.xy/u_resolution.xy;\n"
-                                       "    float densityValue = texture(texture, TexCoord).r;\n"
-                                       "    FragColor = vec4(densityValue*uv.x, densityValue*uv.y, densityValue, 1.0);\n"
-                                       "}\n\0";
+    //                                    "void main()\n"
+    //                                    "{\n"
+    //                                    "    vec2 uv = gl_FragCoord.xy/u_resolution.xy;\n"
+    //                                    "    float densityValue = texture(texture, TexCoord).r;\n"
+    //                                    "    FragColor = vec4(densityValue*uv.x, densityValue*uv.y, densityValue, 1.0);\n"
+    //                                    "}\n\0";
     // ------------------------------------
     // vertex shader
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertex_source, NULL); // uncomment the shaders above and use them if u get a shader err
+    // uncomment the shaders above and use them if u get a shader err
+    glShaderSource(vertexShader, 1, &vertex_source, NULL);
     glCompileShader(vertexShader);
     // check for shader compile errors
     int success;
@@ -238,7 +239,7 @@ int main()
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
+    free_fluid_grid(grid);
     // optional: de-allocate all resources once they've outlived their purpose:
     // ------------------------------------------------------------------------
     glDeleteVertexArrays(1, &VAO);
