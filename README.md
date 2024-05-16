@@ -1,6 +1,7 @@
 # C fluid sim
 
 a fluid simulator written in c
+![fluid.gif](/resources/fluid.gif)
 
 > :warning: this sim is unstable, if it blows up just relaunch, might fix later
 
