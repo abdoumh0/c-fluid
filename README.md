@@ -1,7 +1,10 @@
 # C fluid sim
 
 a fluid simulator written in c
-![fluid.gif](/resources/fluid.gif)
+
+<p align="center">
+  <img src="/resources/fluid.gif?raw=true" alt="fluid.gif" width="320" />
+</p>
 
 > :warning: this sim is unstable, if it blows up just relaunch, might fix later
 
